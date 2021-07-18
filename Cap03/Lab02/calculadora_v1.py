@@ -25,22 +25,18 @@ def calculadora() :
     while op != 0 :
         if op not in [1,2,3,4]:
             print('Opcao inválida, tente novamente: ')
-            op = opcaoCalculo()
         else :
             ent01 = entrada()
             ent02 = entrada()
             if op == 1 :
                 print('Resultado: %.2f' %(ent01 + ent02))
-                calculadora()
             elif op == 2 :
                 print('Resultado: %.2f' %(ent01 - ent02))
-                calculadora()
             elif op == 3 :
                 print('Resultado: %.2f' %(ent01 * ent02))
-                calculadora()
             else :
                 print('Resultado: %.2f' %(ent01 / ent02))
-                calculadora()
+        op = opcaoCalculo()
     print('Obrigado por usar a "Python Calculator"!')
 
 calculadora()
