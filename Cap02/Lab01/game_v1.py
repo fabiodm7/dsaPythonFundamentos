@@ -4,7 +4,9 @@ from tkinter import *
 import random
 import time
 
+# variavel de entrada para a dificuldade do jogo escolhida
 level = int(input("Qual nível você gostaria de jogar? 1/2/3/4/5 \n"))
+# variavel que diminui o tamanho da barra de acordo com a dificuldade
 length = 500/level
 
 
@@ -18,8 +20,9 @@ canvas.pack()
 
 root.update()
 
-# Variável
+# Variável inteira
 count = 0
+# variavel booleana
 lost = False
 
 class Bola:
@@ -29,6 +32,7 @@ class Bola:
         self.id = canvas.create_oval(0, 0, 15, 15, fill=color)
         self.canvas.move(self.id, 245, 200)
 
+        # variavel lista
         starts_x = [-3, -2, -1, 1, 2, 3]
         random.shuffle(starts_x)
 
