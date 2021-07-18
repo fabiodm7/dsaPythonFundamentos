@@ -6,4 +6,41 @@
 
 print("\n******************* Python Calculator *******************")
 
+def opcaoCalculo() :
+    opcao = int(input(
+'''\nSelecione a operação que deseja realizar:
+\n1 - Soma
+2 - Subtração
+3 - Multiplicação
+4 - Divisão
+0 - Sair
+\n'Digite a opção desejada entre 1,2,3,4: '''))
+    return opcao
 
+def entrada() :
+    return float(input('Digite um numero: '))
+
+def calculadora() :
+    op = opcaoCalculo()
+    while op != 0 :
+        if op not in [1,2,3,4]:
+            print('Opcao inválida, tente novamente: ')
+            op = opcaoCalculo()
+        else :
+            ent01 = entrada()
+            ent02 = entrada()
+            if op == 1 :
+                print('Resultado: %.2f' %(ent01 + ent02))
+                calculadora()
+            elif op == 2 :
+                print('Resultado: %.2f' %(ent01 - ent02))
+                calculadora()
+            elif op == 3 :
+                print('Resultado: %.2f' %(ent01 * ent02))
+                calculadora()
+            else :
+                print('Resultado: %.2f' %(ent01 / ent02))
+                calculadora()
+    print('Obrigado por usar a "Python Calculator"!')
+
+calculadora()
