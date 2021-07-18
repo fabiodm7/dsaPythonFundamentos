@@ -29,13 +29,13 @@ def calculadora() :
             ent01 = entrada()
             ent02 = entrada()
             if op == 1 :
-                print('Resultado: %.2f' %(ent01 + ent02))
+                print('%.2f + %.2f = %.2f' %(ent01, ent02, ent01 + ent02))
             elif op == 2 :
-                print('Resultado: %.2f' %(ent01 - ent02))
+                print('%.2f - %.2f = %.2f' %(ent01, ent02, ent01 - ent02))
             elif op == 3 :
-                print('Resultado: %.2f' %(ent01 * ent02))
+                print('%.2f * %.2f = %.2f' %(ent01, ent02, ent01 * ent02))
             else :
-                print('Resultado: %.2f' %(ent01 / ent02))
+                print('%.2f / %.2f = %.2f' %(ent01, ent02, ent01 / ent02))
         op = opcaoCalculo()
     print('Obrigado por usar a "Python Calculator"!')
 
