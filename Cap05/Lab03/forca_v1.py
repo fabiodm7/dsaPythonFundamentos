@@ -86,7 +86,7 @@ class Hangman:
 
     # Método para verificar se o jogo terminou
     def hangman_over(self):
-        if len(self.erro) == 6 :
+        if len(self.erro) < 6 :
             return True
         
     # Método para verificar se o jogador venceu
@@ -126,7 +126,7 @@ class Hangman:
 def rand_word():
     with open("palavras.txt", "rt") as f:
             bank = f.readlines()
-    indice = random.randint(0,len(bank))
+    indice = random.randint(0,len(bank)-1)
     print(indice)
     return bank[indice].strip()
 
@@ -138,7 +138,7 @@ def main():
     game = Hangman(rand_word())
 
     # Enquanto o jogo não tiver terminado, print do status, solicita uma letra e faz a leitura do caracter
-    while game.hangman_over == False : 
+    while game.hangman_over(): 
         # Verifica o status do jogo
         game.print_game_status()    
         chute = input('\nDigite uma letra: ')
