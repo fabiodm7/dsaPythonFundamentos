@@ -88,17 +88,19 @@ class Hangman:
 
     # Método para verificar se o jogo terminou
     def hangman_over(self):
-        if len(self.erro) < 6 :
+        if self.hangman_won() :
+            return False
+        if len(self.erro) < len(board) :
             return True
         
     # Método para verificar se o jogador venceu
     def hangman_won(self):
-        acerto = []
+        # acertos = []
         for i in self.word:
-            if i in self.acerto :
-                acerto.append(i)
-        if ''.join(acerto) == self.word :
-            return True
+            if i not in self.acerto :
+                return False
+                # acertos.append(i)       
+        return True
 
     # Método para não mostrar a letra no board
     def hide_word(self):
@@ -107,11 +109,11 @@ class Hangman:
         if len(self.acerto) == 0 :
             return mask
         else :
-            mask = self.word.split()
+            mask = list(self.word)
             for x,y in enumerate(mask):
                 if y not in self.acerto :
                     mask[x] = '-'
-                return ''.join(mask)
+            return ''.join(mask)
         
     # Método para checar o status do game e imprimir o board na tela
     def print_game_status(self):
@@ -137,7 +139,7 @@ def main():
 
     # Objeto
     game = Hangman(rand_word())
-    print(board[0])
+    # print(board[0])
     # Enquanto o jogo não tiver terminado, print do status, solicita uma letra e faz a leitura do caracter
     while game.hangman_over(): 
         # Verifica o status do jogo
@@ -147,6 +149,7 @@ def main():
     # De acordo com o status, imprime mensagem na tela para o usuário
     if game.hangman_won():
         print ('\nParabéns! Você venceu!!')
+        print ('A palavra era ' + game.word)
     else:
         print ('\nGame over! Você perdeu.')
         print ('A palavra era ' + game.word)
