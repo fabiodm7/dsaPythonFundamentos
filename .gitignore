@@ -5,3 +5,5 @@
 .git
 .tmp
 .vscode
+/Cap06/miniProj01/downloads
+*.db
