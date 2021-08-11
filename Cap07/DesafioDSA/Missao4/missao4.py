@@ -1,24 +1,5 @@
 from nose.tools import assert_equal, assert_raises
 
-class SelectionSort(object):
-
-    def sort(self, data):
-        # Implemente aqui sua solução
-        try:
-            if len(data) <= 1:
-                return data
-            else:
-                for i,d in enumerate(data):
-                    ord = data[i]
-                    j = i - 1
-                    while j >= -1 and ord < data[j]:
-                        data[j+1] = data[j]
-                        j -= 1
-                    data[j+1] = ord
-                print(data)
-                return data
-        except TypeError:
-            raise
 
 class TestSelectionSort(object):
 
