@@ -1,25 +1,5 @@
 from nose.tools import assert_equal
 
-class Grid(object):
-
-    def find_path(self, matrix):
-        # Implemente aqui sua solução
-        if matrix == None or matrix == [[]]:
-            return None
-        else:
-            caminho = []
-            x,y = 0,0
-            chao = len(matrix)-1
-            parede = len(matrix[chao])-1
-            while x < chao and y < parede:
-                if matrix[x+1][y] == 1:
-                    caminho.append((x,y))
-                    x += 1
-                else:
-                    if matrix[x][y+1] == 1:
-                        caminho.append((x,y))
-                        y += 1
-            return caminho
 
 class TestGridPath(object):
 
